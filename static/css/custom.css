@@ -1,0 +1,64 @@
+body {
+  background: #1e3c72;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+/* CONTAINER */
+#mainContainer {
+  margin: 0 auto 5rem;
+}
+
+/* NAVIGATION */
+.navbar {
+  background-color: #232657;
+
+}
+
+#title {
+  color: #aaa;
+  font-size: 1.5rem;
+}
+
+/* TABLE OF INFO */
+.table {
+  /* border: .5px solid #777; */
+}
+
+.table tr th,
+.table tr td {
+  font-weight: lighter;
+}
+
+.table tr th {
+  color: #ddd;
+}
+
+.table tr td {
+  text-align: start;
+  color: #ccc;
+}
+
+/* TABLE HOVER STYLES */
+.table tr th:hover {
+  background-color: #bb5;
+}
+
+.table tr td:hover {
+  background-color: #333;
+}
+
+/* MAIN FOOTER */
+#mainFooter {
+  background-color: #232657;
+}
+
+#mainFooter p {
+  color: #aaa;
+}
+
+#mainFooter a {
+
+}

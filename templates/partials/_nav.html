@@ -1,0 +1,25 @@
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('monitor.home') }}">
+      System Info Web
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link {% if active == 'Home' %} active {% else %} disable {% endif %}" aria-current="page" href="{{ url_for('monitor.home') }}" rel="noreferrer">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if active == 'About' %} active {% else %} disable {% endif %}" href="{{ url_for('monitor.about') }}" rel="noreferrer">
+            About
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

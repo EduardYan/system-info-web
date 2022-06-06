@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+<!-- INITIAL PAGE -->
+
+{% block content %}
+
+<header>
+  <!-- TITLE -->
+  <h1 class="text-start my-4" id="title">System Info</h1>
+<header>
+
+{% with object = monitor.system %}
+<div class="table-responsive-md">
+
+  <table class="table table-primary table-bordered">
+    <thead>
+      <tr>
+        <th>
+          Architecture
+        </th>
+        <td class="table-secondary">
+          {{ object.arch[0] }} - {{ object.arch[1] }}
+        </td>
+      </tr>
+      <tr>
+        <th>Platform</th>
+        <td class="table-secondary">
+          {{ object.platform }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Version
+        </th>
+        <td class="table-secondary">
+          {{ object.version }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Release
+        </th>
+        <td class="table-secondary">
+          {{ object.release }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          CPUS
+        </th>
+        <td class="table-secondary">
+          {{ object.cpus }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Languaje 
+        </th>
+        <td class="table-secondary">
+          {{ object.languaje }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Home Dir
+        </th>
+        <td class="table-secondary">
+          {{ object.home_dir }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Desktop Session 
+        </th>
+        <td class="table-secondary">
+          {{ object.desktop_session }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Date and Time
+        </th>
+        <td class="table-secondary">
+          {{ object.date_and_time }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Python Version
+        </th>
+        <td class="table-secondary">
+          {{ object.python_version }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Node Version
+        </th>
+        <td class="table-secondary">
+          {{ object.node_version }}
+        </td>
+      </tr>
+
+      {% if object.mac_ver != ('', ('', '', ''), '') %}
+        <tr>
+          <th>
+            MacOs Release
+          </th>
+          <td class="table-secondary">
+            {{ object.mac_ver[0] }}
+          </td>
+        </tr>
+      {% endif %}
+
+      {% if object.platform == 'Windows' %}
+        <tr>
+          <th>
+            Windows Edition
+          </th>
+          <td class="table-secondary">
+            {{ object.win32_edition[0] }} {{ object.win32_edition[1] }} {{ object.win32_edition[2] }} {{ object.win32_edition[3] }}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Windows Version
+          </th>
+          <td class="table-secondary">
+            {{ object.win32_version }}
+          </td>
+        </tr>
+      {% endif %}
+
+    </thead>
+  </table>
+</div>
+
+<div class="w-100 text-center">
+  <a class="btn btn-secondary w-50 m-2" href="{{ url_for('monitor.home') }}" rel="noreferrer">
+    Get info again
+  </a>
+</div>
+
+
+{% endwith %}
+
+{% endblock %}

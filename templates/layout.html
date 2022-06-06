@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Info Web</title>
+  <!--BOOTSTRAP STYLES-->
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootswatch/bootstrap.min.css') }}">
+  <!--CUSTOM STYLES-->
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}">
+</head>
+<body>
+
+  {% include 'partials/_nav.html' %}
+
+  <!--CONTAINER-->
+  <div class="container" id="mainContainer">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  {% include 'partials/_footer.html' %}
+
+  
+</body>
+</html>
