@@ -17,11 +17,19 @@ def get_config_object() -> dict:
     CURRENT_DIR = getcwd()
     PATH_FILE = CURRENT_DIR + '/conf.json'
 
-    # open for load the json data
-    with open(PATH_FILE, 'r') as f:
-        OBJECT = load(f)
+    # in case the config file not is found
+    try:
+        # open for load the json data
+        with open(PATH_FILE, 'r') as f:
+            OBJECT = load(f)
 
-    return OBJECT
+        return OBJECT
+    except FileNotFoundError:
+        # return a port for default and debug not restarning
+        return {
+            'PORT': 5000,
+            'DEBUG': 1
+        }
 
 
 # object of configuration to use
