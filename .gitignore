@@ -3,3 +3,6 @@
 
 # cache from python
 __pycache__
+
+# test directory
+/test
